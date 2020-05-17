@@ -18,9 +18,9 @@ class StatsServiceTest {
     @org.junit.jupiter.api.Test
     void averageMonthlySales() {
         StatsService service = new StatsService();
-        int[] average = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int[] monthPrice = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
-        int actual = service.averageMonthlySales(average);
+        int actual = service.averageMonthlySales(monthPrice);
         assertEquals(expected, actual);
     }
 
@@ -59,4 +59,5 @@ class StatsServiceTest {
         int actual = service.monthsMaxAverageSales(monthPrice);
         assertEquals(expected, actual);
     }
+
 }

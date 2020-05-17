@@ -10,11 +10,9 @@ public class StatsService {
     }
 
     public int averageMonthlySales(int[] monthlySales) {
-        int sum = 0;
+        StatsService service = new StatsService();
+        int sum = service.sumOfAllSales(monthlySales);
         int quantity = monthlySales.length;
-        for (int avergeSale : monthlySales) {
-            sum += avergeSale;
-        }
         return sum / quantity;
     }
 
@@ -39,12 +37,8 @@ public class StatsService {
     }
 
     public int monthsMinAverageSales(int[] monthlySales) {
-        int sum = 0;
-        int quantity = monthlySales.length;
-        for (int avergeSale : monthlySales) {
-            sum += avergeSale;
-        }
-        int minAvergesale = (sum / quantity);
+        StatsService service = new StatsService();
+        int minAvergesale = service.averageMonthlySales(monthlySales);
         int count = 0;
         for (int i = 0; i < monthlySales.length; i++) {
             if (monthlySales[i] < minAvergesale) {
@@ -55,12 +49,8 @@ public class StatsService {
     }
 
     public int monthsMaxAverageSales(int[] monthlySales) {
-        int sum = 0;
-        int quantity = monthlySales.length;
-        for (int avergeSale : monthlySales) {
-            sum += avergeSale;
-        }
-        int maxAvergeSale = (sum / quantity);
+        StatsService service = new StatsService();
+        int maxAvergeSale = service.averageMonthlySales(monthlySales);
         int count = 0;
         for (int i = 0; i < monthlySales.length; i++) {
             if (monthlySales[i] > maxAvergeSale) {
@@ -69,5 +59,4 @@ public class StatsService {
         }
         return count;
     }
-
 }
